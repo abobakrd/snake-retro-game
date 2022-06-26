@@ -1,0 +1,675 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+figure,
+figcaption,
+blockquote,
+pre,
+hr,
+code,
+address,
+caption,
+th,
+td,
+button,
+a {
+   font-family: monospace !important;
+}
+
+body {
+   height: 900px;
+   position: absolute;
+   top: 100px;
+   left: 0;
+   right: 0;
+}
+
+:root {
+   --primary-color: #00c0ff;
+   --secondary-color: orange;
+}
+
+button {
+   background: #323232;
+   padding: 14px 20px;
+   font-size: 21px;
+   color: white;
+   border-radius: 6px;
+   border: none;
+   margin-top: 4px;
+}
+
+.btn-text {
+   background: none;
+   padding: 0;
+   font-size: 12px;
+   color: black;
+   border-radius: 0;
+   border-bottom: 1px solid black;
+}
+
+input {
+   margin: 4px 0 0 0;
+   width: 100%;
+   display: block;
+   padding: 10px 9px;
+   border-radius: 6px;
+   border: 2px solid #747474;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   font-size: 16px;
+}
+
+button:hover {
+   cursor: pointer;
+}
+
+#stopButton {
+   background: red;
+}
+
+#gameTimer {
+   font-size: 40px;
+}
+
+h3 {
+   font-size: 25px;
+}
+
+.App {
+   text-align: center;
+}
+
+.App-logo {
+   height: 40px;
+   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+   }
+}
+
+header {
+   background: #c0fff7;
+   color: #002017;
+   padding: 12px 30px;
+   border-radius: 30px 30px 0 0;
+   margin: auto;
+   width: 70%;
+   border: 11px solid #03826a;
+   border-bottom: 0;
+}
+
+header p {
+   font-size: 18px;
+   font-weight: bold;
+   margin: 8px 0;
+}
+
+@keyframes App-logo-spin {
+   from {
+      transform: rotate(0deg);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.snake {
+   position: absolute;
+   z-index: 2;
+   display: inline-grid;
+   justify-content: center;
+   align-content: center;
+   transition-duration: 3s;
+   transition-property: transform;
+   border: 1px solid #94c005;
+   color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 7px 0;
+}
+
+h4 {
+   font-size: 18px;
+}
+
+.cell.food {
+   z-index: 1;
+}
+
+.cell.speed {
+   z-index: 1;
+}
+
+.cell.bomb {
+   background: black;
+   z-index: 1;
+}
+
+.cell {
+   position: absolute;
+   z-index: 0;
+   /* background: #94c005; */
+}
+
+
+.sidebar {
+   background: rgb(228, 195, 123);
+   border-radius: 10px;
+}
+
+.loginContainer {
+   background: white;
+   border-radius: 6px;
+   padding: 20px 20px 9px 20px;
+   width: -moz-fit-content;
+   width: 300px;
+   margin: auto;
+   margin-top: 40px;
+   text-align: center;
+   border: 4px solid #323232;
+}
+
+/* .loginContainer button,
+.loginContainer input {
+   display: block;
+   width: 100%;
+} */
+
+.w-100 {
+   width: 100% !important;
+}
+
+.loginContainer button:hover {
+   background: rgb(70, 70, 70);
+}
+
+table th,
+table td {
+   padding: 10px;
+   border: 1px solid #323232;
+}
+
+table th table .title {
+   font-size: 14px;
+}
+
+.bg-green {
+   background: green;
+}
+
+.game-over,
+.game-won,
+.start-game,
+.select-game-mode {
+   padding: 50px;
+   margin: auto;
+   border-radius: 6px;
+   max-width: 230px;
+   width: 100%;
+   text-align: center;
+   background: #00d0b3;
+   color: black;
+}
+
+.game-over p,
+.game-won p,
+.start-game p,
+.select-game-mode p {
+   font-size: 14px;
+}
+
+.game-over,
+.game-won,
+.start-game,
+.select-game-mode {
+   text-transform: uppercase;
+}
+
+/* target buttons inside game-over start-game */
+.game-over button,
+.start-game button,
+.select-game-mode button,
+.game-won button {
+   background: #00000054;
+}
+
+.select-game-mode button:first-child {
+   margin-right: 10px;
+}
+
+.select-game-mode button {
+   background: #00000054;
+}
+
+.mainGameUI button {
+   width: 100%;
+}
+
+.mainGameUI {
+   min-height: 500px;
+   position: relative;
+   background: #0b0b0b;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color: white;
+}
+
+.mainGameUI {
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+}
+
+.game-mode-bar {
+   background: #00d0b3;
+   width: 100%;
+   justify-content: space-between;
+   display: flex;
+}
+
+.game-mode-bar-item {
+   width: 100%;
+   background: #00d0b3;
+   color: rgb(0, 0, 0);
+   border: 1px solid white;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+}
+
+.game-mode-bar-item button {
+   padding: 6px 9px;
+   font-size: 12px;
+   font-weight: bolder;
+   background: #00000054;
+   margin: 7px;
+   width: fit-content;
+   text-transform: uppercase;
+}
+
+.game-mode-bar-item h3 {
+   font-size: 16px;
+}
+
+.game-board-container {
+   /* border: 1px solid red; */
+   display: flex;
+}
+
+.game-controls-main {
+   max-height: 580px;
+   display: flex;
+   justify-content: center;
+   align-items: stretch;
+   /* gameboard's max height + top bar height*/
+}
+
+p.info {
+   color: rgb(10, 79, 3);
+   font-size: 17px;
+   font-weight: bolder;
+}
+
+p.badge-warning {
+   background: #ffc107;
+   color: black;
+   font-size: 16px;
+   padding: 2px;
+   border-radius: 6px;
+   font-weight: bolder;
+}
+
+.game-controls-bar button {
+   width: 100%;
+   border-radius: 0;
+   margin: 0;
+   border-top: 1px solid black;
+   text-transform: uppercase;
+}
+
+.game-controls-bar {
+   margin: auto;
+   z-index: 1;
+   position: relative;
+   background: black;
+   width: 100%;
+   justify-content: center !important;
+}
+
+.inputContainerStatus input {}
+
+.inputContainerStatus div {
+   border-radius: 0 0 6px 6px;
+   border: 2px solid grey;
+   border-top: 0;
+}
+
+.badge-info-sm {
+   background: #e5f3ff;
+   color: black;
+   margin: 6px 0;
+   border-radius: 4px;
+   padding: 6px;
+   font-size: 11px;
+   font-family: arial;
+}
+
+.personal-score-board,
+.leaderboard {
+   overflow-y: auto;
+   width: 100%;
+   background: white;
+   padding: 30px;
+   border-radius: 0;
+   border: 1px solid black;
+   max-width: 300px;
+   flex-shrink: 0;
+   text-align: center;
+}
+
+.personal-score-board table,
+.leaderboard table {
+   width: 100%;
+}
+
+
+
+
+.leaderboard,
+.personal-score-board {
+   background: rgb(3, 130, 106);
+}
+
+.top-bar {
+   background: white;
+   border-bottom: 1px solid black;
+   color: black;
+}
+
+.top-bar div {
+   width: 100%;
+   border-right: 1px solid black;
+   font-size: 20px;
+}
+
+.top-bar .other-info {
+   background: #00d0b3;
+   display: grid;
+   grid-template-columns: 50% 50%;
+   grid-template-rows: 50% 50%;
+}
+
+.top-bar .other-info>div {
+   background: #00d0b3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 2px;
+   border: 1px solid black;
+}
+
+.top-bar .other-info>div span {
+   text-transform: capitalize;
+}
+
+.top-bar div h6 {
+   margin: 0;
+}
+
+.top-bar div>div:first-child {
+   /* border-bottom: 1px solid black; */
+}
+
+.top-bar>div:last-child {
+   border: none;
+}
+
+.top-bar div>div {
+   font-size: 20px;
+}
+
+.w-50 {
+   width: 50%;
+}
+
+.d-flex-sb {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.d-flex-cc {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.d-flex-spc {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+
+
+.game-core {
+   width: 100%;
+}
+
+.mainGameUI {
+   position: relative;
+   flex-shrink: 0;
+}
+
+.top-bar h2 {
+   font-size: 34px;
+}
+
+body {
+   background-color: rgba(0, 0, 0, 0);
+   background-size: 10%;
+}
+
+table {
+   border-collapse: collapse;
+}
+
+.leaderboard h2,
+.personal-score-board h2 {
+   color: #d9d9d9;
+}
+
+.leaderboard th {
+   background: lightgreen;
+}
+
+.leaderboard td,
+.personal-score-board td {
+   background: rgb(27, 27, 27);
+   color: #acacac;
+}
+
+.personal-score-board th {
+   background: lightgrey;
+}
+
+.personal-score-board {
+   border-radius: 30px 0 0 30px;
+}
+
+.leaderboard {
+   border-radius: 0 30px 30px 0;
+}
+
+.badge-sm.is-valid {
+   background: lightgreen;
+   color: black;
+}
+
+.badge-info {
+   background: #cfcfcf;
+   color: black;
+   font-size: 12px;
+}
+
+.badge-sm.error {
+   background: red;
+   color: black;
+}
+
+.badge-sm.warning {
+   background: yellow;
+   color: black;
+}
+
+.badge-sm {
+   background: #cfcfcf;
+   color: black;
+   font-size: 14px;
+   padding: 8px;
+   border-radius: 6px;
+   font-weight: bolder;
+}
+
+.btn-sm {
+   padding: 5px;
+   font-size: 12px;
+   font-weight: bolder;
+   background: #00000054;
+   margin: 4px 0;
+   text-transform: uppercase;
+}
+
+.btn-md {
+   padding: 10px;
+   font-size: 16px;
+   font-weight: bolder;
+   background: black;
+   margin: 4px 0;
+   width: fit-content;
+   text-transform: uppercase;
+}
+
+.btn-lg {
+   padding: 15px;
+   font-size: 20px;
+   font-weight: bolder;
+   background: #00000054;
+   margin: 4px 0;
+   width: fit-content;
+   text-transform: uppercase;
+}
+
+.home {
+   width: 100%;
+   max-width: 1300px;
+   margin: auto;
+   position: absolute;
+   right: 0;
+   left: 0;
+}
+
+@media screen and (max-width: 768px) {
+   body {
+      display: block;
+      height: 100%;
+   }
+
+   .game-controls-main {
+      flex-wrap: wrap;
+   }
+
+   .leaderboard,
+   .personal-score-board {
+      border-radius: 0;
+   }
+
+   .leaderboard.newPersonalScore {
+      animation: scaleUpAndDown 0.5s ease-in-out;
+   }
+
+   @keyframes scaleUpAndDown {
+      0% {
+         transform: scale(1.0);
+         -webkit-transform: scale(1.0);
+      }
+
+      100% {
+         transform: scale(2.0);
+         -webkit-transform: scale(2.0);
+      }
+   }
+
+   header {
+      width: 90%;
+   }
+
+   .leaderboard {
+      order: 2;
+   }
+
+   .personal-score-board {
+      order: 3;
+   }
+
+   h1 {
+      font-size: 20px;
+   }
+
+   h2 {
+      font-size: 18px;
+   }
+
+   button {
+      font-size: 16px;
+      padding: 4px 6px;
+   }
+
+   header {
+      font-size: 20px;
+      padding: 12px;
+   }
+
+   header p {
+      margin: 0;
+      line-height: 1.2em;
+      font-size: 16px;
+      font-weight: 400;
+   }
+
+   header button {
+      float: right;
+   }
+}
+
+.f-l {
+   float: left;
+}
