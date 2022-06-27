@@ -1,5 +1,7 @@
 # Retro Snake Game
 
+[Play it now](https://demoapp-13866.web.app/)
+
 ### The classic snake game from pre-smartphone era! 
 
 ### Features

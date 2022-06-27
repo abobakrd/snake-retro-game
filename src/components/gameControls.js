@@ -235,7 +235,7 @@ const GameControls = () => {
 
          function changeGameMode() {
             let newMode = gameSession.mode === 'classic' ? 'modern' : 'classic';
-            setGameSession({ ...gameSession, mode: newMode });
+            setGameSession({ ...gameSession, mode: newMode, status: GAME_STATUS.SELECT_MODE });
          }
 
          function changeInvertPosAtBoundMode() {
