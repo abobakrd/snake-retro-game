@@ -67,20 +67,14 @@ const LoginAnonymouslyForm = () => {
       AuthContext_SetDbUser(data);
    }
 
-   function handleUsername(e, s) {
-      if(s === undefined) e.preventDefault();
-
-      console.log('ok');
-
+   function handleUsername(e) {
       const _username = e.target.value;
       setUsername(prevUsername => {
-         console.log('hello');
          if (_username === prevUsername) {
             return prevUsername;
          }
 
          if (_username.length > 5) {
-            console.log('e');
             getDoc(doc(db, 'usernames', _username)).then(doc => {
                if (!doc.exists()) {
                   setUsernameExists(false);
@@ -97,11 +91,6 @@ const LoginAnonymouslyForm = () => {
          return _username;
       });
    }
-
-   useEffect(() => {
-      console.log('loginAnonymosuly rendered');
-      handleUsername({ target: { value: 'test' } }, 'test');
-   }, []);
 
    return (
       <div>
