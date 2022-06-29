@@ -4,7 +4,7 @@
 
 ### The classic snake game from pre-smartphone era! 
 
-The reason i choose to not use a HTML canvas is because i wanted to learn more about how components work in a very dynamic way in React.
+The reason i choose to not use a HTML canvas is because i wanted to learn more about how components work in a very dynamic way in React. 
 
 ### Features
 - **Classic gamemode:** Snake as you know it - a new piece of food item shows up everytime you eat the current one. This mode does not have levels.

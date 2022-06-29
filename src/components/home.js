@@ -46,6 +46,7 @@ const Home = props => {
                }
             }
          </AuthContext.Consumer>
+         <div style={{textAlign:'center', marginTop: '100px'}}><a target="_blank" style={{color:'black',fontWeight:'bolder', textDecoration:'none'}} href="https://github.com/abobakrd/snake-retro-game" rel="noreferrer noopener">Source: Github</a></div>
       </div>
    );
 }
