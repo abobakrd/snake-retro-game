@@ -11,7 +11,7 @@ const LOGIN_METHOD = {
 };
 
 const Login = ({ history }) => {
-   const [loginMethod, setLoginMethod] = useState(LOGIN_METHOD.REGISTER);
+   const [loginMethod, setLoginMethod] = useState(LOGIN_METHOD.ANONYMOUS);
 
    const RegisterBtn = () => (
       <button className="btn-text" onClick={() => setLoginMethod(LOGIN_METHOD.REGISTER)}>Sign up</button>

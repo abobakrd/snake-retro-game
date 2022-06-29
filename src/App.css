@@ -36,14 +36,19 @@ body {
 }
 
 :root {
-   --primary-color: #00c0ff;
-   --secondary-color: orange;
+   --primary-color: #ffffff;
+   --secondary-color: rgb(4, 4, 4);
+   --transparent-white-color: #ffffffe0;
+   --darkblue-color: #0e1620;
+   --green-color: #1b8a44;
+   --snake-color: #2ad067;
+   --orange-color: #ffc107;
 }
 
 button {
    background: #323232;
-   padding: 14px 20px;
-   font-size: 21px;
+   padding: 8px 14px;
+   font-size: 16px;
    color: white;
    border-radius: 6px;
    border: none;
@@ -103,14 +108,16 @@ h3 {
    }
 }
 
+
+
 header {
-   background: #c0fff7;
-   color: #002017;
+   background: linear-gradient(6deg, #218639 0%, #caf580 100%);
+   color: var(--secondary-color);
    padding: 12px 30px;
-   border-radius: 30px 30px 0 0;
+   border-radius: 12px 12px 0 0;
    margin: auto;
    width: 70%;
-   border: 11px solid #03826a;
+   border: 1px solid #ffb203;
    border-bottom: 0;
 }
 
@@ -131,6 +138,7 @@ header p {
 }
 
 .snake {
+   border-radius: 6px;
    position: absolute;
    z-index: 2;
    display: inline-grid;
@@ -209,7 +217,29 @@ h4 {
 table th,
 table td {
    padding: 10px;
-   border: 1px solid #323232;
+}
+
+table td {
+   border: 1px solid #ffffff17;
+}
+
+header button {
+   background: #ffc107;
+   padding: 6px 12px;
+   font-size: 14px;
+   color: black;
+   font-weight:bolder;
+}
+
+.loginContainer .badge-info-sm {
+   font-size: 12px;
+   background: #ffeccf;
+   border-radius: 6px;
+   border: 1px solid orange;
+}
+
+.loginContainer .btn-md {
+   background:green;
 }
 
 table th table .title {
@@ -220,6 +250,10 @@ table th table .title {
    background: green;
 }
 
+.bg-black {
+   background: black;
+}
+
 .game-over,
 .game-won,
 .start-game,
@@ -227,18 +261,23 @@ table th table .title {
    padding: 50px;
    margin: auto;
    border-radius: 6px;
-   max-width: 230px;
+   max-width: 270px;
    width: 100%;
    text-align: center;
-   background: #00d0b3;
-   color: black;
+   background: var(--green-color);
+   color: var(--primary-color);
+}
+
+.start-game {
+   background: none;
 }
 
 .game-over p,
 .game-won p,
 .start-game p,
 .select-game-mode p {
-   font-size: 14px;
+   font-size: 18px;
+   font-weight: bolder;
 }
 
 .game-over,
@@ -253,7 +292,10 @@ table th table .title {
 .start-game button,
 .select-game-mode button,
 .game-won button {
-   background: #00000054;
+   background: var(--orange-color);
+   color: black;
+   font-weight: bolder;
+   font-size: 20px;
 }
 
 .select-game-mode button:first-child {
@@ -261,7 +303,7 @@ table th table .title {
 }
 
 .select-game-mode button {
-   background: #00000054;
+   background: #ffc107;
 }
 
 .mainGameUI button {
@@ -271,7 +313,7 @@ table th table .title {
 .mainGameUI {
    min-height: 500px;
    position: relative;
-   background: #0b0b0b;
+   background: var(--secondary-color);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -285,7 +327,7 @@ table th table .title {
 }
 
 .game-mode-bar {
-   background: #00d0b3;
+   background: var(--primary-color);
    width: 100%;
    justify-content: space-between;
    display: flex;
@@ -293,8 +335,8 @@ table th table .title {
 
 .game-mode-bar-item {
    width: 100%;
-   background: #00d0b3;
-   color: rgb(0, 0, 0);
+   background: var(--darkblue-color);
+   color: lightgreen;
    border: 1px solid white;
    text-align: center;
    display: flex;
@@ -304,13 +346,18 @@ table th table .title {
 }
 
 .game-mode-bar-item button {
-   padding: 6px 9px;
+   padding: 1px 0px;
    font-size: 12px;
    font-weight: bolder;
-   background: #00000054;
+   background: none;
    margin: 7px;
+   width: -moz-fit-content;
    width: fit-content;
    text-transform: uppercase;
+   color: #ffc107;
+   border-bottom: 2px solid #ffc107;
+   border-radius: 0;
+   margin: 0 11px;
 }
 
 .game-mode-bar-item h3 {
@@ -323,7 +370,7 @@ table th table .title {
 }
 
 .game-controls-main {
-   max-height: 580px;
+   max-height: 500px;
    display: flex;
    justify-content: center;
    align-items: stretch;
@@ -371,12 +418,12 @@ p.badge-warning {
 }
 
 .badge-info-sm {
-   background: #e5f3ff;
+   /* background: #e5f3ff; */
    color: black;
    margin: 6px 0;
    border-radius: 4px;
    padding: 6px;
-   font-size: 11px;
+   font-size: 16px;
    font-family: arial;
 }
 
@@ -384,10 +431,10 @@ p.badge-warning {
 .leaderboard {
    overflow-y: auto;
    width: 100%;
-   background: white;
+   background: #ffffff82;
    padding: 30px;
    border-radius: 0;
-   border: 1px solid black;
+   border: 1px solid #ffb203;
    max-width: 300px;
    flex-shrink: 0;
    text-align: center;
@@ -399,17 +446,10 @@ p.badge-warning {
 }
 
 
-
-
-.leaderboard,
-.personal-score-board {
-   background: rgb(3, 130, 106);
-}
-
 .top-bar {
-   background: white;
+   background: #162942;
    border-bottom: 1px solid black;
-   color: black;
+   color: #ffb203;
 }
 
 .top-bar div {
@@ -419,14 +459,14 @@ p.badge-warning {
 }
 
 .top-bar .other-info {
-   background: #00d0b3;
+   background: var(--primary-color);
    display: grid;
    grid-template-columns: 50% 50%;
    grid-template-rows: 50% 50%;
 }
 
 .top-bar .other-info>div {
-   background: #00d0b3;
+   background: #162942;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -493,8 +533,9 @@ p.badge-warning {
 }
 
 body {
-   background-color: rgba(0, 0, 0, 0);
-   background-size: 10%;
+   background-image: linear-gradient(44deg, #218639 0%, #caf580 100%);
+   background-size: 100% !important;
+   background-repeat: no-repeat !important;
 }
 
 table {
@@ -503,7 +544,7 @@ table {
 
 .leaderboard h2,
 .personal-score-board h2 {
-   color: #d9d9d9;
+   color: var(--secondary-color);
 }
 
 .leaderboard th {
@@ -512,8 +553,8 @@ table {
 
 .leaderboard td,
 .personal-score-board td {
-   background: rgb(27, 27, 27);
-   color: #acacac;
+   background: var(--darkblue-color);
+   color: var(--primary-color);
 }
 
 .personal-score-board th {
@@ -521,11 +562,13 @@ table {
 }
 
 .personal-score-board {
-   border-radius: 30px 0 0 30px;
+   border-radius: 10px 0 0 10px;
+   border-right: 0;
 }
 
 .leaderboard {
-   border-radius: 0 30px 30px 0;
+   border-radius: 0 10px 10px 0;
+   border-left: 0;
 }
 
 .badge-sm.is-valid {
@@ -534,9 +577,11 @@ table {
 }
 
 .badge-info {
-   background: #cfcfcf;
-   color: black;
-   font-size: 12px;
+   color: #ffc928;
+   border: 8px double orange;
+   padding: 10px;
+   border-radius: 100px;
+   background: #3a2902;
 }
 
 .badge-sm.error {
@@ -594,7 +639,7 @@ table {
    position: absolute;
    right: 0;
    left: 0;
-   margin-top:100px;
+   margin-top: 100px;
 }
 
 @media screen and (max-width: 768px) {
@@ -672,4 +717,28 @@ table {
 
 .f-l {
    float: left;
+}
+
+header img {
+   width: 50%;
+   position: absolute;
+   left: 21%;
+   bottom: 60%;
+}
+
+/* round left and right corners on table headers */
+table th:first-child {
+   border-top-left-radius: 10px;
+}
+
+table th:last-child {
+   border-top-right-radius: 10px;
+}
+
+table tr:last-child td:first-child {
+   border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+   border-bottom-right-radius: 10px;
 }

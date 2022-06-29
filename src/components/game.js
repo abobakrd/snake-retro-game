@@ -464,7 +464,7 @@ function Game({ gameSess, setGameSess }) {
                         top: snake.top + 'px',
                         width: cSize + 'px',
                         height: cSize + 'px',
-                        background: i0 ? '#353735' : 'black',
+                        background: i0 ? 'var(--snake-color)' : 'var(--green-color)',
                         transform: i0 ? 'rotate(' + snakeHeadRot + 'deg)' : 'none',
                         WebkitTransform: i0 ? 'rotate(' + snakeHeadRot + 'deg)' : 'none'
                      }}>{i === 0 ? '>' : ''}</div>
@@ -494,13 +494,13 @@ function Game({ gameSess, setGameSess }) {
 
    const TopBar = () => (
       <div className="top-bar" style={{ display: 'flex', justifyContent: 'space-between', width: '100%', textAlign: 'center' }}>
-         <div className='d-flex-cc' style={{ background: '#00d0b3' }}>
+         <div className='d-flex-cc'>
             <h3>Score: {score}</h3>
          </div>
-         <div className='d-flex-cc' style={{ background: 'lightgreen' }}>
+         <div className='d-flex-cc'>
             <h2>{formatGameTime()}</h2>
          </div>
-         <div className="other-info" style={{ background: '#aad3ff' }}>
+         <div className="other-info">
             <div>
                <h6>Level: {gameSess.level}</h6>
             </div>

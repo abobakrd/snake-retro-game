@@ -171,7 +171,7 @@ const GameControls = () => {
       const GameOverUI = () => {
          return (
             <div className="game-over">
-               <h1>Game Over</h1>
+               <h1>Game Over 😔</h1>
                <p className="badge-info">Your score: {gameSession.score}</p>
                {gameSession.tries - maxTries === 0 ? <p className="badge-warning">Last try, make it count!</p> : null}
                <button onClick={() => { newGame(); }} className="bg-green">Play again</button>
@@ -193,9 +193,9 @@ const GameControls = () => {
 
          return (
             <div className="game-won">
-               <h1>You won!</h1>
-               <h2>Your score: {gameSession.score}</h2>
-               <p className="info">Level {gameSession.level} starts in {countdown}</p>
+               <h1>Good job! 😀</h1>
+               <p className="badge-info">Your score: {gameSession.score}</p>
+               <p className="badge-info bg-black">Level {gameSession.level} starts in {countdown}</p>
                <button className="bg-green" onClick={() => { setCountdown(0); }}>Next level</button>
             </div>
          )

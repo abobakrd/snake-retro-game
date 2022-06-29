@@ -17,6 +17,7 @@ const Home = props => {
          <React.Fragment>
             <header className="d-flex-spc">
                <h1>Retro Snake</h1>
+               <img src="/snake-bg.svg"></img>
                <div className="header nav">
                   <div>
                      <p>Welcome {dbUser.username}</p>
