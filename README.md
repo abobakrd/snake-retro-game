@@ -1,5 +1,7 @@
 # Retro Snake Game
 
+![snake](https://user-images.githubusercontent.com/46824425/176341581-d403b902-e1e8-4eff-8d61-6f973e91f235.gif)
+
 [Play it now](https://demoapp-13866.web.app/)
 
 ### The classic snake game from pre-smartphone era! 
